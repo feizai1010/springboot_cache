@@ -14,8 +14,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
  * @Date:  2019/8/9 9:59
  */
 @Controller
-@Api(description = "用户接口")
-@RequestMapping("/m")
+@Api(description = "事件接口")
+@RequestMapping("/event")
 public class PublishEventController {
     @Autowired
     private UserEventRegister register;
