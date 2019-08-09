@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.*;
 public class DemoController {
     @Autowired
     private DemoService demoService;
-      @RequestMapping("/getUser")
+      @GetMapping("/getUser")
       @ResponseBody
       public UserDto getUser(){
           return  demoService.getUser();
