@@ -1,14 +1,13 @@
 FROM  java:8
 
-RUN mkdir /mydate/personal/harbor/data
+RUN mkdir /home/demo
 
-COPY ./target/demo-*.jar /mydate/personal/harbor/data
+WORKDIR /home/demo
 
-RUN unzip /app/demo-*.jar -d /mydate/personal/harbor/data
-
-WORKDIR /mydate/personal/harbor/data
+COPY ./target/demo-*.jar /home/demo/demo.jar
 
 EXPOSE 8110
 
-ENTRYPOINT /bin/sh bin/startup.sh -m standalone
+#ENTRYPOINT /bin/sh bin/startup.sh -m standalone
+ENTRYPOINT /usr/bin/java -Xms512m -Xms512m -jar demo.jar
 
